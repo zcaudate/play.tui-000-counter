@@ -1,5 +1,9 @@
 # Tui Basic Counter
 
+This is a basic counter example with no state management.
+
+![](https://user-images.githubusercontent.com/1455572/104465899-84e3d300-55ef-11eb-9a30-8860a1cd8832.png)
+
 ### Dev
 
 ``` shell

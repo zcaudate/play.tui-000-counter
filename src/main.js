@@ -1,6 +1,6 @@
-import React,{useState} from 'react';
-import blessed from 'blessed';
-import {render} from 'react-blessed'
+import React, { useState } from "react";
+import blessed from "blessed";
+import { render } from "react-blessed";
 
 function Button({ action, color, disabled, left, text, top }) {
   return (

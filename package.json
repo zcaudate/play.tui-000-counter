@@ -1,5 +1,5 @@
 {
-  "name": "tui-grid-movement",
+  "name": "tui-counter-basic",
   "main": "src/main.js",
   "scripts": {
     "dev": "npx webpack --watch",
@@ -8,8 +8,8 @@
   "dependencies": {
     "blessed": "0.1.81",
     "raf": "3.4.1",
-    "react": "16.14.0",
-    "react-blessed": "0.6.2"
+    "react": "17.0.1",
+    "react-blessed": "0.7.0"
   },
   "devDependencies": {
     "@sucrase/webpack-loader": "^2.0.0",
