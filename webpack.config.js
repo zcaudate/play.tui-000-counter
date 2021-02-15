@@ -1,3 +1,7 @@
+const webpack = require("webpack");
+
+const path = require("path");
+
 const jsx_rule = {
   test: /\.jsx?$/,
   use: [
