@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import blessed from "blessed";
-import { render } from "react-blessed";
+import React from 'react'
 
-function Button({ action, color, disabled, left, text, top }) {
+import blessed from 'blessed'
+
+import reactBlessed from 'react-blessed'
+
+// play.tui-000-counter.main/Button [17] 
+function Button({action,color,disabled,left,text,top}){
   return (
     <button
       left={left || 0}
@@ -10,96 +13,87 @@ function Button({ action, color, disabled, left, text, top }) {
       content={text}
       shrink={true}
       mouse={true}
-      onPress={function () {
-        if (action && !disabled) {
+      onPress={function (){
+        if(action && !disabled){
           action();
         }
       }}
-      padding={{ top: 1, right: 2, bottom: 1, left: 2 }}
+      padding={{"top":1,"right":2,"bottom":1,"left":2}}
       style={{
-        bg: !disabled ? color : "black",
-        fg: !disabled ? "white" : "gray",
-        focus: { bold: true },
-      }}
-    ></button>
-  );
+        "bg":!disabled ? color : "black",
+        "fg":!disabled ? "white" : "gray",
+        "focus":{"bold":true}
+      }}>
+    </button>);
 }
 
-function Counter() {
-  const [count, setCount] = useState(0);
+// play.tui-000-counter.main/Counter [37] 
+function Counter(){
+  let [count,setCount] = React.useState(0);
   return (
     <box>
       <box
-        padding={{ top: 2, right: 5, bottom: 2, left: 5 }}
+        padding={{"top":2,"right":5,"bottom":2,"left":5}}
         width={14}
         height={7}
-        border="line"
-      >
-        {count}
+        border="line">{count}
       </box>
       <Button
         top={2}
         left={16}
-        action={function () {
+        action={function (){
           setCount(0);
         }}
         color="gray"
-        text="RESET"
-      ></Button>
+        text="RESET">
+      </Button>
       <box top={8}>
         <Button
           text="DEC"
-          action={function () {
-            setCount((count + 10 - 1) % 10);
+          action={function (){
+            setCount(((count + 10) - 1) % 10);
           }}
-          color="red"
-        ></Button>
+          color="red">
+        </Button>
         <Button
           left={7}
           text="INC"
-          action={function () {
+          action={function (){
             setCount((count + 1) % 10);
           }}
-          color="green"
-        ></Button>
+          color="green">
+        </Button>
       </box>
-    </box>
-  );
+    </box>);
 }
 
-function App() {
+// play.tui-000-counter.main/App [63] 
+function App(){
   return (
     <box
-      label="Tui Counter Basic"
+      label="Tui 000 - Counter"
       border="line"
-      style={{ border: { fg: "green" } }}
-    >
+      style={{"border":{"fg":"green"}}}>
       <box left={5}>
-        <box top={3}>
-          <text top={-1} left={1}>
-            COUNTER
-          </text>
-          <Counter></Counter>
-        </box>
+        <box top={3}><text top={-1} left={1}>COUNTER</text><Counter></Counter></box>
       </box>
-    </box>
-  );
+    </box>);
 }
 
-function Screen() {
+// play.tui-000-counter.main/Screen [74] 
+function Screen(){
   const screen = blessed.screen({
-    autoPadding: true,
-    smartCSR: true,
-    title: "Tui Counter Basic",
+    "autoPadding":true,
+    "smartCSR":true,
+    "title":"Tui 000 - Counter"
   });
-  screen.key(["q", "C-c", "Esc"], function () {
+  screen.key(["q","C-c","Esc"],function (){
     this.destroy();
   });
   return screen;
 }
 
-function main() {
-  return render(<App></App>, Screen());
-}
-
-main()
+// play.tui-000-counter.main/__init__ [85] 
+// c2b7d24e-c472-4709-b920-58a481d8e357
+reactBlessed.render((
+  <App></App>),Screen());

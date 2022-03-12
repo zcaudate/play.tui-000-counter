@@ -1,8 +1,11 @@
 init:
-	pnpm install --shamefully-hoist
+	pnpm install
 
 dev:
 	pnpm dev
+
+run:
+	node dist/main.js
 
 package:
 	pnpm package
