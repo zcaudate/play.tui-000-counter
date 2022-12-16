@@ -20,8 +20,8 @@ function Button({action,color,disabled,left,text,top}){
       }}
       padding={{"top":1,"right":2,"bottom":1,"left":2}}
       style={{
-        "bg":!disabled ? color : "black",
-        "fg":!disabled ? "white" : "gray",
+        "bg":!disabled ? [color,"black"] : null,
+        "fg":!disabled ? ["white","gray"] : null,
         "focus":{"bold":true}
       }}>
     </button>);
@@ -94,6 +94,6 @@ function Screen(){
 }
 
 // play.tui-000-counter.main/__init__ [85] 
-// c2b7d24e-c472-4709-b920-58a481d8e357
+// 5257e349-fdb7-4f6c-a07f-954a43928a9f
 reactBlessed.render((
   <App></App>),Screen());
